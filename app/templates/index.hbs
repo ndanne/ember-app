@@ -1,0 +1,26 @@
+<!-- <h4>Hello this from Index</h4>
+<ul>
+<li>{{#link-to "polls" class="post-link"}}Polls{{/link-to}}</li>
+<li>{{#link-to "orders" class="order-link"}}Orders{{/link-to}}</li>
+<li>{{#link-to "post" class="post-link"}}Posts{{/link-to}}</li>
+<li>{{#link-to "user"}}Users{{/link-to}}</li>
+</ul> -->
+
+<div class="card col-md-12">
+<h1>Order Today!</h1>
+<p class="card-content">
+Our online store helps..
+</p>
+{{#link-to "orders" class="message"}}Order Today{{/link-to}}
+</div>
+
+<div class="grid group">
+	{{#each model as |product|}}
+		<div class="product-media">
+			<img src="{{product.imageUrl}}" />
+		</div>
+		<div class="product-content">
+			<h2>{{product.title}}: <strong>${{product.price}}</strong></h2>
+		</div>
+	{{/each}}
+</div>

@@ -1,0 +1,20 @@
+<form {{action "actionName" model on="submit"}} class="form form-horizontal">
+<div class="form-group">
+<label for="name" class="col-sm-3 control-label form-label">Name</label>
+<div class="col-sm-7">{{input type="text" id="name" class="form-input" value=model.name}}</div>
+</div>
+{{#each model.items as |item|}}
+<div class="form-group">
+	<label class="col-sm-3 control-label form-label">
+	{{item.product.title}} @ 
+	${{item.product.price}}/ea
+	</label>
+	<div class="col-sm-7 input-group">	
+		{{input type="number" min="0" class="form-input" value=item.quantity}}
+		<span {{action "addToItemQuantity" item 10}} class="input-group-addon">+10</span>
+	</div>
+</div>
+{{/each}}
+
+<input type="submit" type="Order" value="Order" class="btn btn-danger">
+</form>

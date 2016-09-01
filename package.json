@@ -1,6 +1,6 @@
 {
   "name": "woodland",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Small description for woodland goes here",
   "private": true,
   "directories": {
@@ -12,7 +12,7 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/ndanne/ember-app.git",
   "engines": {
     "node": ">= 0.10.0"
   },

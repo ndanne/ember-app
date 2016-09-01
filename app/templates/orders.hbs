@@ -1,0 +1,16 @@
+<div class="col-md-4">
+<h5>This is router</h5>
+<ul class="nav">
+{{#each model as |order|}}
+<li>
+	{{#link-to "orders.order" order}}
+		Order {{order.id}} for {{order.name}}
+	{{/link-to}}
+</li>	
+{{/each}}	
+</ul>
+
+</div>
+<div class="col-md-8">
+{{outlet}}
+</div>
