@@ -2,8 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model(){
-		console.log("This is Polls router");
-		this.debug('Hello from the router poll.');
+		//console.log("This is Polls router");		
 		return this.get('store').getPolls();
 	},
 	

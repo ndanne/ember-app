@@ -1,12 +1,12 @@
 <form>
-<label for="name">Name</label>
-{{input type="text" id="name" value=model.name}}
-{{#each model.items as |item|}}
+<label for="question" class="form-label">Question: {{model.question}}</label>
+{{input type="text" id="question" value=model.question}}
+{{#each model.options as |option|}}
 	<label>
-	{{item.product.title}} @...
-	{{input type="number" min="0" value=item.quantity}}
+	{{option.value}} @...
+	{{input type="checkbox" min="0" value=option.id}}
 	</label>
 {{/each}}
 
-<input type="submit" type="Order">
+<input type="submit" type="Poll" value="Vote">
 </form>

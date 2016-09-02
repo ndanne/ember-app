@@ -1,15 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	actions: {
-		createPoll(poll) {
-			console.log("This is Poll index router");
-			/*const name = order.get('name');
-			alert(name + 'Order saved!');*/
-			this.get('store').savePoll(poll);
-			this.transitionTo('polls.poll', poll);
+	/*actions: {
+		createPoll(vote) {		
+			this.get('store').savePoll(vote);
+			this.transitionTo('polls.poll', vote);
 		}
-	},
+	},*/
 	model(){
 		return this.get('store').newPoll();		
 	},

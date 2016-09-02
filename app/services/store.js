@@ -53,6 +53,7 @@ const polls = [
     ]
   })
 ];
+const options = [];
 export default Ember.Service.extend({
 	/*getOrderById(id) {
 		const orders = this.getOrders();
@@ -66,7 +67,7 @@ export default Ember.Service.extend({
 		];
 	},*/
 	//_emberConsole.default.debug('DEBUG: ' + "Store mail");
-	getProducts() { return products; },
+	getProducts() { console.log(products); return products; },
 	getOrderById(id) { return orders.findBy('id', id); },
 	getOrders() { return orders; },
 	
@@ -75,7 +76,7 @@ export default Ember.Service.extend({
   	getPolls() { return polls; },
 	//getOptions() { return options; },
 	newOrder(){
-		return Order.create({
+		return Order.create({	
 			items: products.map((product) => {
 				return LineItem.create({
 					product: product
@@ -86,5 +87,14 @@ export default Ember.Service.extend({
 	saveOrder(order) {
 		order.set('id', 9999);
 		order.pushObject(order);
-	}
+	},
+	newPoll(){
+    return  Poll.create({
+      options: options.map((vote) => {
+         return Option.create({
+           vote: vote
+        });  
+      })
+    });
+  }
 });

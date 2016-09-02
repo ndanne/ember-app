@@ -1,5 +1,4 @@
-{{outlet}}
-<h4>Check out previous questions from Woodland Wanderers:</h4>
+<div class="col-md-4">
 <ul>
   {{#each model as |poll|}}
   <li>
@@ -7,4 +6,8 @@
   </li>
   {{/each}}
  </ul> 
-
+</div>
+<div class="col-md-8">
+<h4>Check out previous questions from Woodland Wanderers:</h4>
+{{outlet}}
+</div>
